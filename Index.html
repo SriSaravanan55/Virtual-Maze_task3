@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Management System</h1>
+    </header>
+
+    <main>
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="page active">
+            <div class="dashboard-container">
+                <div class="dashboard-card">
+                    <h2>Total Students</h2>
+                    <p id="total-students-value">0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Average Mark</h2>
+                    <p id="average-mark-value">0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Highest Average</h2>
+                    <p id="highest-mark-value">0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h2>Lowest Average</h2>
+                    <p id="lowest-mark-value">0</p>
+                </div>
+            </div>
+        </section>     
+
+        <!-- NAVIGATION -->
+        <div class="button-container">
+            <nav>
+                <button class="nav-button active" data-page="dashboard">Dashboard</button>
+                <button class="nav-button" data-page="add-student">Add Student</button>
+                <button class="nav-button" data-page="student-list">Student List</button>
+                <button class="nav-button" data-page="search-student">Search Student</button>
+            </nav>
+        </div>
+
+        <!-- ADD STUDENT -->
+        <section id="add-student" class="page">
+            <h2>Add Student</h2>
+
+            <form id="student-form">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" placeholder="Enter student name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter age" min="18" max="40" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                    </select>
+                </div>
+                <h3>Subject Marks</h3>
+                <div class="marks-container">
+                    <div class="form-group">
+                        <label for="tamil">Tamil</label>
+                        <input type="number" id="tamil" min="0" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="english">English</label>
+                        <input type="number" id="english" min="0" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maths">Maths</label>
+                        <input type="number" id="maths" min="0" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="science">Science</label>
+                        <input type="number" id="science" min="0" max="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="social">Social</label>
+                        <input type="number" id="social" min="0" max="100" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="main-button">Add Student</button>
+            </form>
+        </section>
+
+        <!-- STUDENT LIST -->
+        <section id="student-list" class="page">
+            <h2>Student List</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Department</th>
+                            <th>Marks</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="student-table-body">
+                        <!-- Student rows are added using JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SEARCH STUDENT -->
+        <section id="search-student" class="page">
+            <h2>Search Student</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Enter student name">
+                <button type="button" id="search-button" class="main-button"> Search </button>
+            </div>
+            <div id="search-result"></div>
+        </section>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
